@@ -1,0 +1,486 @@
+@import 'variables';
+@import 'single';
+@import 'section2';
+@import 'section3';
+@import 'modal';
+
+html, body{
+    width:100%;
+    min-height: 100%;
+}
+body{
+    font-family: $font;
+    background: $background_orange;
+    position:relative;
+    header{
+        @include size(100%,155px,0 auto, $background_white);
+        z-index:11;
+        box-shadow: inset 0px 1px 4px  $shadow_color ;
+        .navigation{
+            @include flex(1,column);
+            width:1200px;
+            margin:0 auto;
+            .previous{ 
+                @include size(42px, 42px,0,$background_white);
+                position:absolute;
+                top:41px;
+                left:64px;
+                border-radius:50%;
+                border:2px solid $border;
+                cursor:pointer;
+                z-index:10;
+                &:before{
+                    @include arrowElem(7px,16px,16px,rotate(50deg) );
+                    background-color:$border;
+                    width:3px;
+                }
+                &:after{
+                    @include arrowElem(16px,16px,16px,rotate(-50deg) );
+                    background-color:$border;
+                    width:3px;
+                }
+            }
+            .container{
+                width:1200px;
+                .row .nav1{
+                    width:800px;
+                    @include flex(1,row);
+                    align-items: center;
+                    padding:50px 0px 0px;
+                    .questions{
+                        flex:3;
+                        h1{
+                            @include font(32px,$font_dark,normal,bold,$font);
+                            display:inline-block;
+                            margin:0px 30px 20px 0px;
+                        }
+                        .addQuestionButton{
+                            @include size(26px, 26px,0,$font_blue);
+                            display:inline-block;
+                            border-radius:50%;
+                            cursor:pointer;
+                            &:after{
+                                @include arrowElem(6px,12px,14px,rotate(0) );
+                            }
+                            &:before{
+                                @include arrowElem(6px,12px,14px,rotate(90deg) );
+                            }
+                        } 
+                    }
+                    .radios{
+                        @include flex(3,row);
+                        justify-content: flex-end;
+                        label{
+                            @include font(14px,$font_dark,normal,bold,$font);
+                            margin-right:27px;
+                        }
+                        label:last-of-type{
+                            margin-right:12px;
+                        }
+                    }
+                    .sorting{
+                        @include flex(2,row);
+                        justify-content: flex-end;
+                        font-size:14px;
+                        .sortBy{
+                            @include font(13px,$font_right,italic,normal,$fonti);
+                        }
+                        .hot{
+                            color:$font_blue;
+                            cursor:pointer;
+                            margin:0px 5px;
+                        }
+                        .recent{
+                            color:$font_light;
+                            text-decoration: underline;
+                            cursor:pointer;
+                            margin:0px 5px;
+                        }
+                        .daysAgo{
+                            color:$font_dark;  
+                            margin:5px;
+                        }
+                    }
+                }
+                .row .nav2{
+                    width:800px;
+                    padding:0;
+                    form{
+                        @include flex(1,row);
+
+                        .form-control{ 
+                            flex:6;
+                            border-radius:0px;
+                            border-color: $background_darkgrey;
+                        }
+                        .btn{
+                            flex:1.8;
+                            padding:6px 0px;
+                            margin-left:22px;
+                            border-radius:0px;
+                            color:$font-light;
+                        }
+                    }
+
+                }    
+            } 
+
+        }
+    }
+    .main{
+        @include size(1200px,calc(100% - 58px),0px auto 58px , $background_grey);
+        box-shadow:7px 0px 7px -7px rgb(237,209,160);
+    }
+}
+.sections.row>div{
+    background-color:$background_white;
+    position:relative;
+    padding:0px;
+    /*width: 800px;*/
+    height:100%;
+    box-shadow:7px 0px 7px -7px rgb(233,233,233);
+}
+section{
+    @include size(100%,280px,0 auto 40px,$background_white);
+    @include flex(1,column); 
+    /*margin-bottom:40px;*/
+    border-top:1px solid $border;
+    &:first-of-type{
+        border-top:none;
+    }
+}
+.heading{
+    @include flex(1,row);
+    background-color:$background_blue;
+    .photoDiv{
+        @include flexCenter(center, center,.9,row);
+        margin-right:10px;
+        span {
+            img{
+                cursor:pointer;
+            } 
+        }
+    }
+    .qDiv{
+        flex:5;
+        color:$font_blue;
+        .q{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: baseline;
+            h4{
+                font-size:14px;
+                margin:20px 0px 0px 10px;
+            }
+            .action{
+                @include font(10px,$font_light,normal,normal,$font);
+                padding-left: 10px;
+            }
+        }
+        h3{
+            margin:10px 0px 0px 10px;
+            font-style:italic; 
+            font-family:$fonti;
+        }
+    }
+    .addInfoDiv{
+        flex:2;
+        background-color: $background_white;
+    }
+}
+.responses{
+    @include flex(2,row);
+    .replies{
+        @include flex(6,row);
+        background-color: $background_white;
+        div:first-of-type{
+            margin-left:0px;
+            margin-right:5px;
+        }
+        div:last-of-type{
+            margin-right:0px;
+        }
+        .invisible2{
+            order:5;
+            opacity:0;
+        }
+    }
+    .stats{
+        @include flex(2, column);
+        justify-content: space-between;
+        background-color: $background_white;
+        padding-top: 33px;
+        .stat{
+            @include font(13px,$font_right,italic,normal,$fonti);
+            display:flex;
+            position:relative;
+            align-items: center;
+            margin-left:44px;
+            .number{
+                @extend .number;
+            }
+        }
+    }
+}
+footer.col-lg-8.col-lg-offset-2{
+    height:90px;
+    background-color: $background_white;
+    @include font(16px,$font_red,bold,normal,$font);
+    box-shadow:7px 0px 7px -7px rgb(233,233,233);
+    border-top:1px solid $border;
+    padding:37px 0;
+    p{
+        padding-left:20px;
+        cursor:pointer;
+    }
+}
+.reply{
+    @include flex(1,column);
+    max-width: 92px;
+    align-items: center;
+    background-color: $background_darkgrey;
+    color:$font_light;
+    margin: 33px 5px 0px 5px;
+    &:first-child{
+        @include flex(1,column);
+        margin-top:0px ;
+        background-color: $background_blue;
+        align-items: center;
+        padding-top:33px;
+        span:last-of-type{
+            &:after{
+                display:none;
+            }
+        }
+    }
+    span:first-of-type{
+        flex:5;
+        margin-top:23px;
+    }
+    span:last-of-type{
+        flex:1;
+        font-size:10px;
+        padding-top:10px;
+        &:after{
+            content:'';
+            width:10px;
+            height:10px;
+            border-radius: 50%;
+            background:$font-light;
+            position:absolute;
+            left: calc( 50% - 5px);
+            bottom:-5px;
+        }
+    }
+    .comment{
+        border-top:1px solid $font_light;
+    }
+    .answer:last-of-type{
+        border-top:1px solid $font_dark;
+        &:after{
+            background:$font-dark;
+        }
+    }
+    span {
+        img{
+            cursor:pointer;
+        } 
+    }
+}
+.moreActivities{
+    background-color: $background_white;
+    span:first-of-type{
+        @extend .number;
+        flex:3;
+    }
+    span:last-of-type{
+        @include font(13px,$font_right,italic,normal,$fonti);
+        display:flex;
+        position:relative;
+        flex:2;
+        text-align: center;
+    }
+}
+img{
+    border-radius:50%;
+}
+
+@media only screen and (max-width: 1200px){
+    body{
+        .main{
+            width:800px;
+        }
+        header{
+            width:auto;
+            .navigation{ 
+                width:100%;
+                .previous{
+                    left:30px;
+                }
+                .container {
+                    width:auto;
+                    .row  .nav1{
+                        flex-wrap:wrap;
+                        padding-top:20px;
+                        .questions{
+                            flex-basis:90%;
+                            h1{
+                                margin: 0 30px 12px 0;
+                            }
+                        }
+                        .radios{
+                            justify-content:flex-start;
+                        }
+                        .sorting{
+                            justify-content:flex-end;
+                        }
+                    }
+                    .row  .nav2{
+                        padding:15px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 992px){
+    body{
+        header{
+            .navigation{
+                width:500px;
+                .previous{
+                    left:-100px;
+                }
+                .container .row{
+                    .nav1, .nav2{
+                        width:500px;
+                    }
+                } 
+            }
+        }
+
+        .main{
+            width:500px;
+            .row{
+                div.col-lg-8.col-lg-offset-2.col-md-12.col-md-offset-0{
+                    /*width:500px;*/
+                    section{
+                        width:500px;
+                        .heading .addInfoDiv{
+                            flex:0;
+                        }
+                        .responses{
+                            width:500px;
+                            .replies{
+                                flex:3;
+                                .moreActivities{
+                                    display:flex !important;
+                                }
+                            }
+                            .stats{
+                                flex:2; 
+                                .stat{
+                                    font-size:12px;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+            .row footer{
+                width:500px;
+            }
+        }
+
+    } 
+}
+@media only screen and (max-width:768px){
+    body{
+        header .navigation{
+            width:320px;
+            .previous{
+                left:initial;
+                right:5px;
+                top:15px;
+            }
+            .container .row .nav1{
+                width:320px;
+                flex-direction:column;
+                padding-top:15px;
+                align-items:flex-start;
+                .questions{
+                    h1{
+                        font-size:20px;
+                        margin:0px 30px 0px 0px;
+                    }
+                }
+                .radios{
+                    margin:8px 0px;
+                }
+            }
+            .container .row  .nav2{
+                width:320px;
+            }
+        } 
+        .main{
+            width:320px;
+            .row{
+                div.col-lg-8.col-lg-offset-2.col-md-12.col-md-offset-0{
+                    /*width:320px;*/
+                    height:234px;
+                    section{
+                        @include size(320px,calc(100% - 28px),0 auto 28px,$background_white);
+                        .heading {
+                            .qDiv{
+                                .q{
+                                    h4{
+                                        margin:10px 0 0 0;
+                                    }
+                                }
+                                h3{
+                                    font-size:14px;
+                                    margin:10px 0 0 0;
+                                }
+                            } 
+                            .photoDiv{
+                                flex:1.25;
+                            }
+                        }
+                        .responses{
+                            width:320px;
+                            .replies{
+                                flex:2;
+                                .reply{
+                                    margin: 1px;
+                                    max-width:77px;
+                                    span{
+                                        img{
+                                            cursor:pointer;
+                                        }
+                                    }
+                                }
+                            }
+                            .stats{
+                                flex:2; 
+                                justify-content: space-around;
+                                padding-top: 0px;
+                                .stat{
+                                    margin-left:34px;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+            .row, .row>footer{
+                width:320px;
+            }  
+        }
+    }
+    img{
+        width:35px;
+        height:35px;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="responses">
+    <div class="stats">
+        <div class="stat">
+            <p ng-show="votes >= 0">
+                <span class='votes'>{{votes}}</span>
+                upvotes
+            </p>
+            <p ng-hide="votes >= 0">
+                <span class='votes'>{{votes| makePositive}}</span>
+                downvotes
+            </p>
+            <div class='arrows'>
+                <span class='arrow arrowUp'></span>
+                <span class='arrow arrowDown'></span>
+            </div>
+        </div>
+    </div>
+</div>

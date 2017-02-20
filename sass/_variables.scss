@@ -1,0 +1,77 @@
+$background_orange: rgb(255,225,173);
+$background_grey:rgb(251,251,251);
+$background_darkgrey:rgb(238,238,238);
+$background_blue:rgb(223,243,253);
+$background_white: rgb(255,255,255);
+$shadow_color:rgb(241,241,241);
+$shadowD_color:rgb(233,233,233);
+$font:'roboto', sans-serif ;
+$fonti:'Libre Baskerville', serif;
+$font_dark:rgb(45,44,46);
+$font_right:rgb(64,75,81);
+$border:rgb(229,229,229);
+$font_light:rgb(167,169,172);
+$font_blue:rgb(2,102,179);
+$font_red:rgb(220,23,63);
+$font_p:rgb(88,109,113);
+
+
+@mixin size($width, $height, $margin, $back){
+    width:$width;
+    height:$height;
+    margin:$margin;
+    background-color: $back;
+    position:relative;
+
+}
+@mixin font($size,$color,$style,$weight,$family){
+    font: $style $weight $size $family;
+    color:$color;
+
+}
+@mixin flexCenter($justify, $align,$flex,$direction){
+    justify-content: $justify;
+    align-items: $align;
+    display:flex;
+    flex:$flex;
+    flex-direction: $direction;
+
+}
+@mixin flex( $flex, $direction){
+    flex:$flex;
+    flex-direction: $direction;
+    display:flex;
+    position:relative;
+}
+
+@mixin arrowElem($top,$left,$height,$transform ){
+    content:'';
+    width:2px;
+    height:$height;
+    background-color: white;
+    position:absolute;
+    border-radius:1px;
+    left:$left;
+    top:$top;
+    transform:$transform;
+}
+
+%modalVertical{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    position:relative;                      
+}
+.number{
+    padding:4px;
+    font-weight: bold;
+    font-style:normal;
+    color:$font_right;
+}
+
+
+
+          
+            
+           
+         

@@ -1,0 +1,45 @@
+<div class="col-lg-8 col-lg-offset-2 col-sm-12 col-sm-offset-0">
+    <section>
+        <div class="heading">
+            <!--<headingphotodiv></headingphotodiv> replaces following block-->
+            <div class="photoDiv"> 
+                <a  data-toggle="modal" data-target="#myModal">
+                    <span>
+                        <img alt="photo of person  responding" src="imgs/eva.jpg" >
+                    </span>
+                </a>
+            </div>
+            <div class="qDiv">
+                <div class="q">
+                    <a  data-toggle="modal" data-target="#myModal" >
+                        <h4>{{oneQS.asking}}</h4>
+                    </a>
+                    <span class="action">IS ASKING</span>
+                </div>
+                <h3>{{oneQS.question}}</h3>
+            </div>
+            <div class="addInfoDiv hidden-xs">
+                <p>
+                    unfollow
+                </p>
+            </div>
+        </div>
+        <div class="responses">
+            <div class="replies ">
+                <div class="reply hidden-xs"></div>
+                <div class='reply'>
+                    <p>{{oneQS.questionDetails}}</p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <p><span class='votes'>{{oneQS.votes}}</span>  upvotes</p>
+                    <div class='arrows'>
+                        <span class='arrow arrowUp'></span>
+                        <span class='arrow arrowDown'></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

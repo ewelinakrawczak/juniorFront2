@@ -1,0 +1,325 @@
+
+.modal-dialog{
+    width: 848px;
+    margin: 20px auto;
+    .modal-content{
+        button.close{
+            position:absolute;
+            top:12px;
+            right:12px;
+            z-index:20;
+            padding:10px;
+        }
+        .modal-header{
+            border-bottom:none;
+            padding-bottom:10px;
+            .modal-title{
+                @extend %modalVertical;
+                .modal_image{
+                    width: 85px;
+                    height:85px;
+                    margin-top:34px;
+                } 
+                h6{
+                    @include font(20px,$font_blue,normal,normal,$font);
+                    padding:20px 0px 12px;
+                }
+                .modal_info{ 
+                    width:73.5%;
+                    display:flex;
+                    flex:1;
+                    position:relative;
+                    border-bottom:1px solid $font_light;
+                    div:last-of-type{
+                        justify-content:flex-end;
+                    } 
+                    div:first-of-type{
+                        justify-content:flex-start;
+                    } 
+                    div{
+                        justify-content: center;
+                        flex:1;
+                        position:relative;
+                        display:flex;
+                        span{
+                            margin:8px 4px;
+                        }
+                        .when{
+                            @include font(12px,$font_right,normal,normal,$font) ;
+                        }
+                        .action{
+                            @include font(13px,$font_light,normal,normal,$font);
+                        }
+                        .symbol{
+                            border-radius:0px;
+                        }  
+                    }
+                }
+            } 
+        }
+        .modal-body{
+            @extend %modalVertical;
+            text-align: center;
+            .modal_body_title{
+                display:flex;
+                width:75%;
+                align-items: center;
+                .body_title{ 
+                    @include font(34px,$font_right,italic,normal,$fonti) ;
+                    text-align: center;
+                    flex:4;
+                }
+                div:first-of-type, div:last-of-type{
+                    .addQuestionButton{
+                        @include size(30px, 30px,0,$font_light);
+                        display:inline-block;
+                        border-radius:50%;
+                        cursor:pointer;
+                        flex:1;
+                        &:hover{
+                            background-color: $font_blue;
+                        }
+                        &:after{
+                            @include arrowElem(7px,13px,11px,rotate(50deg) );
+                        }
+                        &:before{
+                            @include arrowElem(14px,13px,11px,rotate(-50deg) );
+
+                        }
+                    }
+                }
+                div:last-of-type{
+                    .addQuestionButton{
+                        &:after{
+                            transform: rotate(-50deg);
+                            left: 15px;
+                        }
+                        &:before{
+                            transform: rotate(50deg);
+                            left: 15px;
+                        }
+                    }
+                }
+            }
+            .action{
+                @include font(14px,$font_light,normal,normal,$font);
+                margin-top:30px;
+            }
+            .imgs{
+                flex:4;
+                display:flex;
+                margin:14px 0px;
+                figure{
+                    margin:6px;
+                    img{
+                        border-radius:0px;
+                    }
+                    figcaption{
+                        @include font(16px,$font_blue,normal,normal,$font);
+                        text-align: center;
+                        margin-top:9px;
+                    }
+                }
+            }
+            .squares{
+                flex:4;
+                display:flex;
+                margin:40px 0px;
+                div{
+                    display:flex;
+                    .square{
+                        @include font(14px,$font_right,italic,normal,$fonti);
+                        @include flexCenter(center, center,1,column );
+                        width:93px;
+                        height:93px;
+                        background-color: rgb(229,245,253);
+                        margin:10px;
+
+                        .num{
+                            @include font(22px,$font_right,normal,bold,$font);
+                        }
+                    }
+                    .square1{
+                        transform: rotate(-37deg);
+                        span{
+                            transform: rotate(37deg); 
+                        }
+                    }
+                    .square2{
+                        transform: rotate(-11deg);
+                        span{
+                            transform: rotate(11deg); 
+                        }
+                    }
+                    .square3{
+                        transform: rotate(-33deg);
+                        span{
+                            transform: rotate(33deg); 
+                        }
+                    }
+                    .square4{
+                        transform: rotate(11deg);
+                        span{
+                            transform: rotate(-11deg); 
+                        }
+                    }
+                }
+            }
+        }
+        .modal-footer{
+            @extend %modalVertical;
+            margin:39px 0px 24px;
+            border:none;
+            background: repeating-linear-gradient(45deg,#fff ,#fff 2px,$border 3px,$border 4px);
+            .footer_photo{
+                margin-top:-40px;
+            }
+            .footer_title2{
+                @include font(16px,$font_blue,italic,bold,$fonti); 
+                margin:10px 0 20px;
+            }
+            .footer_title1{
+                @include font(14px,$font_blue,normal,normal,$font);
+                margin-top:20px;
+            }
+            .action{
+                @include font(12px,$font_light,normal,normal,$font);
+            }
+            .stats{
+                display: flex;
+                justify-content:center;
+                div{
+                    display:flex;
+                    .stat{
+                        @include font(14px,$font_right,italic,normal,$fonti);
+                        display:flex;
+                        flex-direction: row;
+                        margin:8px;
+                        p{
+                            padding: 4px;
+                        }
+                        .number{
+                            @extend .number;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 870px){
+    .modal-dialog{
+        width:100%;
+        .modal-content {
+            .modal-body{
+                width:calc(100% - 42px);
+                margin:0 21px;
+            }
+            .modal-header .modal-title .modal_info{
+                width:calc(100% - 42px);
+                margin:0 21px;
+            }
+            .modal-footer{
+                text-align:center;
+                .stats{
+                    justify-content: space-around;
+                    width:100%;
+                    div{
+                        width:100%;
+                        justify-content: center;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 648px){
+    .modal-dialog{
+        width:100%;
+        .modal-content {
+            .modal-header{
+                .modal-title{
+                    .modal_image{
+                        width: 50px;
+                        height:50px;
+                        margin-top:5px;
+                    } 
+                    h6{
+                        @include font(16px,$font_blue,normal,normal,$font);
+                        padding:10px 0px 12px;
+                    }
+                    .modal_info{
+                        flex-direction: column;
+                        align-items: center;
+                        width:100%;
+                        div{
+                            display:flex;
+                            flex-direction: column;
+                            align-items:center;
+                        }
+                    }
+                } 
+            }
+            .modal-body{
+                padding:0px;
+                width: calc( 100% - 22px);
+                margin:0 11px; 
+                .action{
+                    margin:20px 35px 0px;
+                }
+                .squares{
+                    flex-direction: column;
+                    div{
+                        .square{
+                            background-color: rgba(223,243,252,.75);
+                            margin:0px 10px;
+                        }
+                    }
+                }}
+            .modal-footer{
+                padding-left:0px;
+                padding-right:0px;
+                .stats{
+                    div{
+                        flex-direction:column-reverse;
+                    }
+                }
+            }
+        }
+    }}
+
+@media only screen and (max-width: 540px){
+    .modal-dialog .modal-content .modal-body .modal_body_title{
+        width:100%;
+        .body_title{ 
+
+            @include font(20px,$font_right,italic,normal,$fonti) ;
+        }
+        div:first-of-type, div:last-of-type{
+            .addQuestionButton{
+                @include size(20px, 20px,0,$font_light);
+                &:after{
+                    @include arrowElem(5px,8px,7px,rotate(50deg) );
+                }
+                &:before{
+                    @include arrowElem(9px,8px,6px,rotate(-50deg) );
+                }
+            }
+        }
+        div:last-of-type{
+            .addQuestionButton{
+                &:after{
+                    transform: rotate(-50deg);
+                    left: 10px;
+                }
+                &:before{
+                    transform: rotate(50deg);
+                    left: 10px;
+                }
+            }
+        }
+    }
+}

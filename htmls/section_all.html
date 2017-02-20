@@ -1,0 +1,60 @@
+<div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-0" ng-repeat="section in sections"
+     ng-init="parentIdx = $index"> 
+    <section>
+        <div class="heading">
+            <div class="photoDiv"> 
+                <a  data-toggle="modal"  data-target="#myModal" >
+                    <span>
+                        <img alt="photo of person asking" ng-src="imgs/{{section.asking}}.jpg"
+                             ng-click="getNameAsking(parentIdx)">
+                    </span>
+                </a>
+            </div>
+            <div class="qDiv">
+                <div class="q">
+                    <a  data-toggle="modal" data-target="#myModal" >
+                        <h4 ng-click="getNameAsking(parentIdx)">{{section.asking}}</h4>
+                    </a>
+                    <span class="action">IS ASKING</span>
+                </div>
+                <h3>{{section.question}}</h3>
+            </div>
+            <div class="addInfoDiv hidden-sm hidden-xs"></div>
+        </div>
+        <div class="responses">
+            <div class="replies">
+                <div class="reply hidden-xs" >
+                    <span></span>
+                    <span class='comment'>ASKED</span>
+                </div>
+                <div class="reply moreActivities" ng-hide="section.commented.length < 3" >
+                    <span class='number'>{{section.actions}}</span> 
+                    <span >more<br> activities</span>
+                </div>
+                <div class="reply hidden-xs hidden-sm" ng-repeat="comment in section.commented">
+                    <span>
+                        <a   data-toggle="modal" data-target="#myModal">
+                            <img alt="photo of person responding" ng-src="imgs/{{comment}}.jpg"
+                                 ng-click="getNameComment(parentIdx, innerParentIdx)" ng-init="innerParentIdx = $index">
+                        </a>
+                    </span> 
+                    <span class="comment">COMMENTED</span>
+                </div>
+                <div class="reply">
+                    <span>
+                        <a  data-toggle="modal" data-target="#myModal">
+                            <img alt="photo of person  responding" ng-src="imgs/{{section.answered}}.jpg" 
+                                 ng-click="getNameAnswered(parentIdx)" >
+                        </a>
+                    </span> 
+                    <span class="answer">ANSWERED</span>
+                </div>
+            </div>
+            <div class="stats">
+                <p class="stat"><span class="number">{{section.relatedDiscussions}}</span> related discussion</p>
+                <p class="stat"><span class="number">{{section.peersInvolved}}</span> peers involved</p>
+                <p class="stat"><span class="number">{{section.conversations}}</span> conversation</p>
+            </div>
+        </div>
+    </section>
+</div>

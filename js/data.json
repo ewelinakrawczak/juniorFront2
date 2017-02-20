@@ -1,0 +1,48 @@
+{
+
+"sections":[
+
+{"asking":"Eva","question":"Will insulin make my patient gain weight", "answered":"Joseph",
+    "commented":["S.E.N Waweru", "Patricia", "David"],"relatedDiscussions":1,"conversations":3, "peersInvolved":6,"actions":3},
+{"asking":"Andrew","question":"Vegan diet in diabetes treatment?", "answered":"Patricia", 
+    "commented":["David", "Joseph", "Halima"],"relatedDiscussions":2,"conversations":5, "peersInvolved":9, "actions":6},
+{"asking":"Joseph","question":"Vegan diet to stop diabetes progress ","answered":"Eva",
+    "commented":["Halima", "Patricia"],"relatedDiscussions":5,"conversations":0, "peersInvolved":4, "actions":6}
+], 
+"users":[
+    {"name":"Eva", "memberFor":"5 months", "lastSeen":"saturday afternoon",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/eva.jpg"},
+     {"name":"Andrew", "memberFor":"1 year", "lastSeen":"monday afternoon",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/dave.jpg"},
+     {"name":"Joseph", "memberFor":"2 months", "lastSeen":"saturday afternoon",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/joseph.jpg"},
+     {"name":"Patricia", "memberFor":"5 days", "lastSeen":"saturday afternoon",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/patricia.jpg"},
+     {"name":"Halima", "memberFor":"5 weeks", "lastSeen":"sunday afternoon",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/halima.jpg"},
+     {"name":"S.E.N Waweru", "memberFor":"2 days", "lastSeen":"saturday afternoon",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/sen.jpg"}, 
+    {"name":"David", "memberFor":"2 weeks", "lastSeen":"yesterday",
+        "activityLevel":"imgs/activity_sum.jpg", "img":"imgs/david.jpg"}
+    
+],
+"oneQuestionSection":{
+    "asking":"Eva",
+     "question":"Will insulin make my patient gain weight","votes":19,
+     "questionDetails":"All my patients with diabetes should see an opthalmologist yearly for a dialated eye examination- beginning at diagnosis inpeople with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye diseas, symptoms of blurred vision in one eye, or blind spots may need to see their opthalmologist more frequently.",
+        "commented":[
+            {"name":"Patricia","lastCommented":"yesterday","votes":8,
+                "responses":[{"name":"David","lastCommented":"yesterday","votes":8
+                        
+                }],
+                        "comment":
+                        "Numbers of tingling in your feet should be reported to your doctor at your regular visits."},                   
+           {"name":"Joseph","lastCommented":"two days", "votes":"-3",
+                "responses":[],
+               "comment":
+                       "When your blood sugar is low, your body gives out signs that you need food. Different poeple have different symptoms. You will learn to know your symptoms."}
+    ]    
+}
+
+        
+}

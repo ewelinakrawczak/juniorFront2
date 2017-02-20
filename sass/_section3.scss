@@ -1,0 +1,22 @@
+.sections.sectionsS1.row >  div.col-lg-7.col-lg-offset-3{
+    .S3{
+        z-index:1;
+        border-top:1px solid $border;
+        .heading{
+            flex:5;
+            div:first-of-type{
+                flex:1;
+            }
+            div:last-of-type{
+                flex: 4;
+            }
+        } 
+    }
+}
+
+@media only screen and (max-width:1200px){
+    .sections.sectionsS1.row >  div.col-lg-7.col-lg-offset-3{
+        width: calc(100% - 90px);
+        margin-left:90px;
+    }
+}
